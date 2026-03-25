@@ -8,16 +8,24 @@
     "scheme": "mediaapp",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "icon": "./assets/images/icon.png",
+      "bundleIdentifier": "com.akveo.mediaplayer",
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "UIBackgroundModes": ["audio"]
+      }
     },
     "android": {
+      "package": "com.akveo.mediaplayer",
+      "googleServicesFile": "./google-services.json",
+      "predictiveBackGestureEnabled": false,
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
-      },
-      "predictiveBackGestureEnabled": false
+      }
     },
     "web": {
       "output": "static",
@@ -34,11 +42,88 @@
             "imageWidth": 76
           }
         }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static",
+            "buildReactNativeFromSource": true,
+            "forceStaticLinking": [
+              "FirebaseCore",
+              "FirebaseCoreExtension",
+              "FirebaseCoreInternal",
+              "FirebaseCrashlytics",
+              "FirebaseRemoteConfig",
+              "FirebaseABTesting",
+              "FirebaseInstallations",
+              "FirebaseSessions",
+              "FirebaseSharedSwift",
+              "FirebaseRemoteConfigInterop",
+              "GoogleUtilities",
+              "GoogleDataTransport",
+              "nanopb",
+              "PromisesObjC",
+              "PromisesSwift"
+            ],
+            "extraPods": [
+              {
+                "name": "GoogleUtilities",
+                "modular_headers": true
+              },
+              {
+                "name": "GoogleDataTransport",
+                "modular_headers": true
+              },
+              {
+                "name": "nanopb",
+                "modular_headers": true
+              },
+              {
+                "name": "FirebaseABTesting",
+                "modular_headers": true
+              }
+            ]
+          },
+          "android": {
+            "compileOptions": {
+              "sourceCompatibility": "17",
+              "targetCompatibility": "17",
+              "coreLibraryDesugaringEnabled": true
+            },
+            "kotlinOptions": {
+              "jvmTarget": "17"
+            }
+          }
+        }
+      ],
+      "expo-audio",
+      [
+        "bitmovin-player-react-native",
+        {
+          "playerLicenseKey": "db834fea-a40a-46c1-9ff3-cc3c215298ea",
+          "features": {
+            "backgroundPlayback": true,
+            "airPlay": true,
+            "pictureInPicture": true,
+            "offline": true,
+            "googleCastSDK": {
+              "android": "21.3.0",
+              "ios": "4.8.1.2"
+            }
+          }
+        }
       ]
     ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "2eca18b0-e63f-483c-bade-4e359cea7cdf"
+      }
     }
   }
 }
