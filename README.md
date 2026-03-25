@@ -34,6 +34,22 @@ See `.env.example` for the template.
 
 **Important:** Never commit the `.env` file with sensitive keys. Use `.env.example` as a template for the team.
 
+### Firebase Configuration
+
+Firebase files contain sensitive API keys and are **git-ignored** for security.
+
+**For iOS:**
+1. Download `GoogleService-Info.plist` from [Firebase Console](https://console.firebase.google.com)
+2. Place it in the project root directory
+3. See `GoogleService-Info.plist.example` for reference
+
+**For Android:**
+1. Download `google-services.json` from [Firebase Console](https://console.firebase.google.com)
+2. Place it in the project root directory
+3. See `google-services.json.example` for reference
+
+**⚠️ Security Note:** Never commit Firebase config files to git. They are already in `.gitignore`. Each developer/environment should have their own copy with their own API keys.
+
 ### Installation
 
 ```bash

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- 
+	This is a template file. Download the actual GoogleService-Info.plist from:
+	Firebase Console > Project Settings > iOS > GoogleService-Info.plist
+	
+	DO NOT commit the real file to git - it contains sensitive API keys.
+	Add GoogleService-Info.plist to .gitignore (already configured).
+	-->
+	<key>PLACEHOLDER</key>
+	<string>See Firebase Console for your actual configuration</string>
+</dict>
+</plist>
